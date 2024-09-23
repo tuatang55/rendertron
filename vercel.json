@@ -1,13 +1,10 @@
 {
-    "buildCommand": "npm run build",
+    
     "builds": [
       {
         "src": "build/rendertron.js",
         "use": "@vercel/node"
       }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "build/rendertron.js" }
     ]
   }
   
