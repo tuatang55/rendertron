@@ -11,7 +11,7 @@
   "types": "build/rendertron.d.ts",
   "bin": "bin/rendertron",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build",
     "prepack": "npm run build",
     "start": "node build/rendertron.js",
     "format": "npm run format:eslint && npm run format:prettier",
@@ -24,6 +24,11 @@
     "start-emulator": "(gcloud beta emulators datastore start --no-store-on-disk --project emulator-project --host-port localhost:8380 &) 2>&1 | grep -m1 'now running'",
     "test-cache": "npm run build && npm run start-emulator && $(gcloud beta emulators datastore env-init) && export GCLOUD_PROJECT=emulator-project && ava build/test/*-cache-test.js"
   },
+  "engines": {
+    "node": "10.15.1",
+    "npm": "6.4.1"
+  },
+  
   "files": [
     "bin/",
     "build/",
